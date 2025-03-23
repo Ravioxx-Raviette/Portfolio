@@ -1,0 +1,283 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('hi2.png') center center fixed; /* Add your background image */
+    background-size: cover; /* Make the image cover the entire viewport */
+    color: #e0e0e0; /* Light text for readability */
+    line-height: 1.6;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative; /* For overlay */
+}
+
+/* Dark Overlay to Enhance Readability */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark overlay */
+    z-index: -1; /* Places overlay behind content */
+}
+
+/* Header - Static */
+header {
+    background: linear-gradient(135deg, #1f1f1f, #333333); /* Subtle dark gradient */
+    color: #e0e0e0;
+    padding: 60px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Deeper shadow for more depth */
+    position: static; /* Static positioning (normal flow) */
+    z-index: 1;
+}
+
+/* Container for the header content */
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-img {
+    width: 120px; /* Circular image width */
+    height: 120px; /* Circular image height */
+    border-radius: 50%; /* Make it circular */
+    object-fit: cover; /* Ensure the image covers the circle */
+    margin-bottom: 20px; /* Space between the image and text */
+}
+
+header h1 {
+    font-size: 3rem; /* Bigger size for more impact */
+    margin: 0;
+    letter-spacing: 2px;
+    font-weight: 700; /* Bold header */
+}
+
+header p {
+    margin: 10px 0 30px;
+    font-size: 1.3rem;
+    color: #b3b3b3; /* Slightly lighter contrast */
+    font-weight: 400;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #64ffda; /* Accent color for hover */
+    transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Sections */
+section {
+    padding: 60px 20px; /* Reduced padding */
+    max-width: 900px; /* Reduced max-width for smaller sections */
+    margin: 0 auto;
+}
+
+section h2 {
+    font-size: 2.2rem; /* Slightly smaller font size */
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    color: #64ffda; /* Accent color */
+    font-weight: 600;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 50px; /* Shortened underline */
+    background: #64ffda;
+    margin: 10px auto;
+}
+
+section p {
+    font-size: 1.1rem; /* Slightly smaller text */
+    color: #b3b3b3;
+    margin: 20px 0;
+    line-height: 1.8;
+    max-width: 700px; /* Limit width for better alignment */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Me Section - New Subsections */
+#skills, #education, #hobbies {
+    margin-top: 30px;
+    padding: 20px 20px; /* Reduced padding */
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: none; /* No shadow for streamlined look */
+    color: #e0e0e0;
+    transition: transform 0.3s ease;
+}
+
+#skills h3, #education h3, #hobbies h3 {
+    font-size: 1.8rem; /* Smaller heading font size */
+    color: #64ffda;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#skills ul, #hobbies ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1rem; /* Smaller list font size */
+    color: #b3b3b3;
+}
+
+#skills ul li, #hobbies ul li {
+    margin: 8px 0; /* Reduced space between list items */
+}
+
+#education p {
+    font-size: 1.1rem;
+    color: #b3b3b3;
+}
+
+/* Hover effect for sections */
+#skills:hover, #education:hover, #hobbies:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted for smaller width */
+    gap: 20px; /* Reduced gap */
+    padding-top: 40px;
+}
+
+.project-card {
+    padding: 20px; /* Reduced padding */
+    border-radius: 8px; /* Reduced border radius */
+    background: #1e1e1e;
+    box-shadow: none; /* Removed heavy shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px; /* Reduced height for a more compact card */
+    position: relative;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Subtle shadow on hover */
+}
+
+.project-icon {
+    font-size: 40px; /* Smaller icon size */
+    color: #64ffda;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    color: #21c1b7; /* Change icon color on hover */
+}
+
+.project-card h3 {
+    font-size: 1.3rem; /* Reduced heading size */
+    font-weight: 600;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #b3b3b3;
+}
+
+/* Links */
+a {
+    color: #64ffda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #21c1b7;
+}
+
+/* Footer */
+footer {
+    background: #1f1f1f;
+    color: #b3b3b3;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow to lift footer */
+}
+
+.footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer-content p {
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #64ffda;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #21c1b7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    #skills, #education, #hobbies {
+        padding: 25px 20px; /* Slightly adjusted padding */
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack project cards on smaller screens */
+        gap: 20px;
+    }
+
+    footer {
+        font-size: 0.85rem;
+    }
+}
